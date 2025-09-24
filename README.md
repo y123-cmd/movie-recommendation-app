@@ -42,7 +42,7 @@ External API: TMDb (The Movie Database API)
 
 The database schema is designed to manage users, movies, and user preferences efficiently.
 
-(replace the link above with your ERD from draw.io or Lucidchart export)
+https://drive.google.com/file/d/1BXNZPCU3ntczU694Q7tE5uXipRx8ZXnz/view?usp=sharing
 
 🚀 Setup Instructions
 1️⃣ Clone the repo
