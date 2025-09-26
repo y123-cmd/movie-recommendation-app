@@ -1,9 +1,13 @@
 from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
-from .models import Movie
+from .models import Movie, Genre
+from django.db.models import Q
 
-@login_required
 def movie_list(request):
-    movies = Movie.objects.all()
-    return render(request, "movies/movie_list.html", {"movies": movies})
+    context = {
+        "trending": Movie.objects.all()[:10],  # Example: first 10 movies
+        "new_releases": Movie.objects.order_by('-release_date')[:10],
+        "action_movies": Movie.objects.filter(genres__name__icontains="Action")[:10],
+        "comedy_movies": Movie.objects.filter(genres__name__icontains="Comedy")[:10],
+    }
+    return render(request, "movies/movie_list.html", context)
 
