@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <!-- Hero Banner -->
+  <div class="hero-banner">
+    <div class="overlay">
+      <h1 class="hero-title">🎬 Movie Recommendation App</h1>
+      <p class="hero-subtitle">Stream. Discover. Enjoy.</p>
+    </div>
+  </div>
+
+  <!-- Section Title -->
+  <h2 class="section-title">Available Movies</h2>
+
+  <!-- Movie Grid -->
+  <div class="movie-grid">
+    {% for movie in movies %}
+      <div class="movie-card">
+        <div class="poster"
+             {% if movie.cover_image %}
+               style="background-image: url('{{ movie.cover_image.url }}');"
+             {% else %}
+               style="background-image: url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&w=500&q=80');"
+             {% endif %}>
+        </div>
+        <div class="movie-info">
+          <h3>{{ movie.title }}</h3>
+          <p><strong>Genre:</strong> {{ movie.genre.name }}</p>
+          <p>{{ movie.description|truncatewords:15 }}</p>
+        </div>
+      </div>
+    {% empty %}
+      <p style="text-align:center;">No movies available yet.</p>
+    {% endfor %}
+  </div>
+
+  <!-- CSS Styling -->
+  <style>
+    /* General Body */
+    body {
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+      background: url("https://images.unsplash.com/photo-1608897013039-887169d33b2e?auto=format&fit=crop&w=1600&q=80") 
+                  no-repeat center center/cover;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      position: relative;
+    }
+    .hero-banner .overlay {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px 40px;
+      text-align: center;
+      border-radius: 8px;
+    }
+    .hero-title {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #e50914;
+      font-weight: bold;
+    }
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: #ddd;
+    }
+
+    /* Section Title */
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin: 20px 0;
+      color: #e50914;
+    }
+
+    /* Movie Grid */
+    .movie-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    /* Movie Card */
+    .movie-card {
+      background: #111;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .movie-card:hover {
+      transform: scale(1.08);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+    }
+
+    /* Poster */
+    .poster {
+      width: 100%;
+      height: 300px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Movie Info */
+    .movie-info {
+      padding: 15px;
+      color: #fff;
+    }
+    .movie-info h3 {
+      margin: 0 0 10px 0;
+      font-size: 1.2rem;
+      color: #e50914;
+    }
+    .movie-info p {
+      margin: 5px 0;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+  </style>
+{% endblock %}
+

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MovieWorld 🎬</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background: rgba(0,0,0,0.8);
+      z-index: 1000;
+    }
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      color: #e50914;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #e50914;
+    }
+    /* Hero Carousel */
+    .hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .slides {
+      display: flex;
+      width: 300%;
+      height: 100%;
+      animation: slideShow 15s infinite;
+    }
+    .slide {
+      width: 100%;
+      flex-shrink: 0;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+    .overlay h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    .overlay p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    .btn {
+      background: #e50914;
+      border: none;
+      padding: 12px 24px;
+      color: #fff;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #f40612;
+    }
+    /* Keyframes for sliding */
+    @keyframes slideShow {
+      0% { transform: translateX(0); }
+      33% { transform: translateX(-100%); }
+      66% { transform: translateX(-200%); }
+      100% { transform: translateX(0); }
+    }
+    /* Content */
+    .content {
+      padding: 40px;
+      background: #111;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #000;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">MovieWorld</div>
+    <div>
+      <a href="/">Home</a>
+      <a href="/movies/">Movies</a>
+      <a href="/favorites/">Favorites</a>
+      <a href="/accounts/login/">Login</a>
+    </div>
+  </nav>
+
+  <!-- Hero Carousel -->
+  <div class="hero">
+    <div class="slides">
+      <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1606813902913-5c4a3a7e8b4f?auto=format&fit=crop&w=1600&q=80');"></div>
+      <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1517602302552-471fe67acf66?auto=format&fit=crop&w=1600&q=80');"></div>
+      <div class="slide" st
+
