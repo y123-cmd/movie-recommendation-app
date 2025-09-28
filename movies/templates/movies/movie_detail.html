@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="detail-container">
+    <div class="poster-large">
+        <img src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" alt="{{ movie.title }}">
+    </div>
+    <div class="movie-details">
+        <h1>{{ movie.title }}</h1>
+        <p><strong>Release Date:</strong> {{ movie.release_date }}</p>
+        <p><strong>Rating:</strong> ⭐ {{ movie.vote_average }}/10 ({{ movie.vote_count }} votes)</p>
+        <p><strong>Runtime:</strong> {{ movie.runtime }} min</p>
+        <p class="overview">{{ movie.overview }}</p>
+        <a href="https://www.youtube.com/results?search_query={{ movie.title }} trailer" 
+           target="_blank" class="btn watch-trailer">▶ Watch Trailer</a>
+        <a href="/" class="btn back">⬅ Back to Home</a>
+    </div>
+</div>
+
+<style>
+.detail-container {
+  display: flex;
+  gap: 30px;
+  padding: 40px;
+  background: #000;
+  color: #fff;
+}
+
+.poster-large img {
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+}
+
+.movie-details {
+  max-width: 700px;
+}
+
+.movie-details h1 {
+  font-size: 2rem;
+  color: #e50914;
+  margin-bottom: 15px;
+}
+
+.movie-details p {
+  margin: 8px 0;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.movie-details .overview {
+  margin: 20px 0;
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+.btn {
+  display: inline-block;
+  margin-right: 15px;
+  padding: 10px 18px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.watch-trailer {
+  background: #e50914;
+  color: #fff;
+}
+.watch-trailer:hover {
+  background: #b20710;
+}
+
+.back {
+  background: #333;
+  color: #fff;
+}
+.back:hover {
+  background: #555;
+}
+</style>
+{% endblock %}

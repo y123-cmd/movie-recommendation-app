@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="favorites-container" style="padding: 40px; background-color: #141414; color: #fff; min-height: 100vh;">
+    
+    <h1 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 20px; border-bottom: 2px solid #e50914; display: inline-block; padding-bottom: 5px;">
+        Your Favorites ❤️
+    </h1>
+
+    <p style="font-size: 1.2rem; margin-bottom: 40px; color: #b3b3b3;">
+        Here you’ll see all your saved favorite movies. Sit back and enjoy the show 🍿
+    </p>
+
+    <!-- Grid layout for favorite movies -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px;">
+        
+        <!-- Example movie card -->
+        <div style="background-color: #222; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.5); transition: transform 0.3s;">
+            <img src="https://via.placeholder.com/300x450" alt="Movie Poster" style="width: 100%; height: auto; display: block;">
+            <div style="padding: 10px;">
+                <h3 style="margin: 0; font-size: 1.1rem; color: #fff;">Movie Title</h3>
+                <p style="font-size: 0.9rem; color: #b3b3b3;">Short description...</p>
+            </div>
+        </div>
+
+        <!-- You can duplicate this card when you have real movie data -->
+        
+    </div>
+</div>
+{% endblock %}
